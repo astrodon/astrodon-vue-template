@@ -1,4 +1,9 @@
-import { App } from "https://github.com/astrodon/astrodon/raw/main/mod.ts";
+/** 
+ * Please remember to update deno cache if you worked with astrodon before, 
+ * it is recommended to use a versioned toolchain eg.: x/astrodon@0.1.0-alpha.2
+ */
+
+import { App } from "https://deno.land/x/astrodon/mod.ts";
 import { getIndex } from "./utils.ts";
 
 /**
