@@ -1,5 +1,5 @@
-import { dirname, join, fromFileUrl} from "https://deno.land/std/path/mod.ts";
-const __dirname = dirname(fromFileUrl(import.meta.url));
+import { join } from "https://deno.land/std/path/mod.ts";
+const __dirname = new URL('.', import.meta.url).pathname;
 
 export const getIndex = () => {
   const isDev = Deno.env.get("DEV") == "true";
