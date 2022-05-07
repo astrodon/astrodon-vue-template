@@ -2,5 +2,6 @@
   "type": "astrodon",
   "name": "vue",
   "description": "Vue3 Astrodon template",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "last_compat_version": "0.2.0-alpha.1"
 }

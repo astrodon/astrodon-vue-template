@@ -1,0 +1,11 @@
+{
+  "tasks": {
+    "build:renderer": "deno run -A --unstable ./scripts/build.renderer.ts",
+    "build:main": "astrodon build -A",
+    "build:": "build:renderer && build:main",
+    "develop:serve": "deno run -A --unstable ./scripts/develop.server.ts",
+    "develop:watch": "deno run -A --unstable ./scripts/develop.watch.ts",
+    "develop": "deno task build:renderer && deno task develop:watch & deno task develop:serve & sleep 2 && deno task start",
+    "start": "astrodon run -A"
+  }
+}

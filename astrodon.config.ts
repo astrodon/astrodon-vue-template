@@ -1,14 +1,24 @@
 
-import { dirname, join, fromFileUrl } from 'https://deno.land/std/path/mod.ts';
-const __dirname = dirname(fromFileUrl(import.meta.url));
+import type { IAppConfig } from "https://raw.githubusercontent.com/astrodon/astrodon/main/modules/astrodon/mod.ts";
 
-export default {
-  name: 'default_example',
-  version: '0.0.1',
-  description: '',
-  build: {
-    out: join(__dirname, 'dist'),
-    entry: join(__dirname, 'mod.ts'),
-    assets: join(__dirname, 'renderer', 'dist')
+export default <IAppConfig> {
+  main: "./mod.ts",
+  name: "My Vue app",
+  id: "com.astrodon.vue",
+  version: "0.1.0",
+  author: "Denosaur",
+  shortDescription: "Some description",
+  longDescription: "More description",
+  homepage: "https://astrodon.land",
+  copyright: `Denosaur ${new Date().getFullYear()}`,
+  permissions: {
+    allow_hrtime: true,
+    prompt: true,
+    allow_net: [],
   },
-}
+  build: {
+    dist: "./dist",
+    icons: [],
+    resources: ['./rederer/dist'],
+  },
+};

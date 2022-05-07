@@ -3,7 +3,7 @@
  * it is recommended to use a versioned toolchain eg.: x/astrodon@0.1.0-alpha.2
  */
 
-import { App } from "https://deno.land/x/astrodon/mod.ts";
+import { AppWindow } from "https://raw.githubusercontent.com/astrodon/astrodon/main/modules/astrodon/mod.ts";
 import { getIndex } from "./utils.ts";
 
 /**
@@ -14,12 +14,12 @@ import { getIndex } from "./utils.ts";
 
 const indexPath = getIndex();
 
-const app = await App.new();
+const mainWindow = new AppWindow("My vue app");
 
-await app.registerWindow({ title: "Compile example", url: indexPath });
+await mainWindow.setUrl(indexPath);
+
+await mainWindow.run();
 
 setInterval(() => {
-  app.send(`Hello Tauri: ${Math.random()}`);
+  mainWindow.send('from-astrodon', `Hello Astrodon: ${Math.random()}`);
 }, 500);
-
-app.run();
