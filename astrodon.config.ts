@@ -19,6 +19,6 @@ export default <IAppConfig> {
   build: {
     dist: "./dist",
     icons: [],
-    resources: ['./rederer/dist'],
+    resources: ['./renderer/dist'],
   },
 };
